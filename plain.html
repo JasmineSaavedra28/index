@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .calculator {
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-rows: min-content auto;
+            gap: 10px;
+        }
+
+        .display {
+            background-color: #eee;
+            padding: 15px;
+            text-align: right;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+
+        button {
+            padding: 15px;
+            border: none;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        .operator, .equal, .clear {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+        <button id="btn-7">7</button>
+        <button id="btn-8">8</button>
+        <button id="btn-9">9</button>
+        <button id="btn-div" class="operator">/</button>
+        <button id="btn-4">4</button>
+        <button id="btn-5">5</button>
+        <button id="btn-6">6</button>
+        <button id="btn-mult" class="operator">*</button>
+        <button id="btn-1">1</button>
+        <button id="btn-2">2</button>
+        <button id="btn-3">3</button>
+        <button id="btn-sub" class="operator">-</button>
+        <button id="btn-0">0</button>
+        <button id="btn-dot">.</button>
+        <button id="btn-equal" class="equal">=</button>
+        <button id="btn-add" class="operator">+</button>
+        <button id="btn-clear" class="clear">C</button>
+    </div>
+</div>
+
+<script>
+    function appendNumber(number) {
+    document.getElementById('display').innerText += number;
+}
+
+function appendOperator(operator) {
+    document.getElementById('display').innerText += operator;
+}
+
+function calculate() {
+    var input = document.getElementById('display').innerText;
+    var result = eval(input);
+    document.getElementById('display').innerText = result;
+}
+
+document.getElementById('btn-7').addEventListener('click', function() {
+    appendNumber('7');
+});
+
+document.getElementById('btn-7').addEventListener('click', function() {
+    appendNumber('7');
+});
+
+document.getElementById('btn-8').addEventListener('click', function() {
+    appendNumber('8');
+});
+
+document.getElementById('btn-9').addEventListener('click', function() {
+    appendNumber('9');
+});
+
+document.getElementById('btn-div').addEventListener('click', function() {
+    appendOperator('/');
+});
+
+document.getElementById('btn-4').addEventListener('click', function() {
+    appendNumber('4');
+});
+
+document.getElementById('btn-5').addEventListener('click', function() {
+    appendNumber('5');
+});
+
+document.getElementById('btn-6').addEventListener('click', function() {
+    appendNumber('6');
+});
+
+document.getElementById('btn-mult').addEventListener('click', function() {
+    appendOperator('*');
+});
+
+document.getElementById('btn-1').addEventListener('click', function() {
+    appendNumber('1');
+});
+
+document.getElementById('btn-2').addEventListener('click', function() {
+    appendNumber('2');
+});
+
+document.getElementById('btn-3').addEventListener('click', function() {
+    appendNumber('3');
+});
+
+document.getElementById('btn-sub').addEventListener('click', function() {
+    appendOperator('-');
+});
+
+document.getElementById('btn-0').addEventListener('click', function() {
+    appendNumber('0');
+});
+
+document.getElementById('btn-dot').addEventListener('click', function() {
+    appendNumber('.');
+});
+
+document.getElementById('btn-equal').addEventListener('click', function() {
+    calculate();
+});
+
+document.getElementById('btn-add').addEventListener('click', function() {
+    appendOperator('+');
+});
+
+document.getElementById('btn-clear').addEventListener('click', function() {
+    // Lógica para limpiar el display de la calculadora
+});
+
+</script>
+
+</body>
+</html>
