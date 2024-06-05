@@ -81,5 +81,5 @@ document.getElementById('btn-add').addEventListener('click', function() {
 });
 
 document.getElementById('btn-clear').addEventListener('click', function() {
-    // Lógica para limpiar el display de la calculadora
+    document.getElementById('display').innerText = '0';
 });
